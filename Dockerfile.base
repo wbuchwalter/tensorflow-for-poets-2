@@ -1,0 +1,7 @@
+# Base image including image files and pre-generated bottlenecks
+
+FROM tensorflow/tensorflow:1.4.0
+RUN mkdir /app/
+WORKDIR /app
+RUN curl http://download.tensorflow.org/example_images/flower_photos.tgz | tar xz -C .
+COPY bottlenecks/ /app/bottlenecks
